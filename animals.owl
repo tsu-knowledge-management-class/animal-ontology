@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <Ontology xmlns="http://www.w3.org/2002/07/owl#"
-     xml:base="http://www.semanticweb.org/ololx/ontologies/2021/8/untitled-ontology-2"
+     xml:base="http://www.semanticweb.org/ololx/ontologies/2021/8/animals"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     ontologyIRI="http://www.semanticweb.org/ololx/ontologies/2021/8/untitled-ontology-2">
+     ontologyIRI="http://www.semanticweb.org/ololx/ontologies/2021/8/animals">
     <Prefix name="" IRI="http://www.semanticweb.org/ololx/ontologies/2021/8/untitled-ontology-2"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
@@ -13,16 +13,43 @@
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
     <Declaration>
+        <Class IRI="#Грызуны"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Домашняя_кошка"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Животные"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Змея"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Канибал"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Конечности"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Кошачьи"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Млекопитающие"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Мыши"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Мышиные"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Насекомые"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Рептилия"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Хищные"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Части_тела"/>
@@ -31,10 +58,22 @@
         <Class IRI="#Чешуйчатые"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Членистоногие"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Ящерица"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#Быть_съеденым"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Питаться"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#Состоять_из"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Джери"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Лапа"/>
@@ -45,6 +84,25 @@
     <Declaration>
         <NamedIndividual IRI="#Шарик"/>
     </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#Мыши"/>
+        <Class IRI="#Мышиные"/>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#Грызуны"/>
+        <Class IRI="#Млекопитающие"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Домашняя_кошка"/>
+        <Class IRI="#Кошачьи"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Домашняя_кошка"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#Питаться"/>
+            <Class IRI="#Мыши"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
     <SubClassOf>
         <Class IRI="#Змея"/>
         <Class IRI="#Чешуйчатые"/>
@@ -63,12 +121,43 @@
         <Class IRI="#Части_тела"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Кошачьи"/>
+        <Class IRI="#Хищные"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Млекопитающие"/>
+        <Class IRI="#Животные"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Мышиные"/>
+        <Class IRI="#Грызуны"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Насекомые"/>
+        <Class IRI="#Членистоногие"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Рептилия"/>
         <Class IRI="#Животные"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Хищные"/>
+        <Class IRI="#Млекопитающие"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Хищные"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#Питаться"/>
+            <Class IRI="#Животные"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Чешуйчатые"/>
         <Class IRI="#Рептилия"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Членистоногие"/>
+        <Class IRI="#Животные"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Ящерица"/>
@@ -90,13 +179,41 @@
         <NamedIndividual IRI="#Лапа"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#Ящерица"/>
+        <Class IRI="#Домашняя_кошка"/>
         <NamedIndividual IRI="#Томас"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Змея"/>
         <NamedIndividual IRI="#Шарик"/>
     </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Питаться"/>
+        <NamedIndividual IRI="#Томас"/>
+        <NamedIndividual IRI="#Джери"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Питаться"/>
+        <NamedIndividual IRI="#Томас"/>
+        <NamedIndividual IRI="#Томас"/>
+    </ObjectPropertyAssertion>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#Быть_съеденым"/>
+        <ObjectProperty IRI="#Питаться"/>
+    </InverseObjectProperties>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#Быть_съеденым"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#Питаться"/>
+    </FunctionalObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Состоять_из"/>
+        <Class IRI="#Животные"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Состоять_из"/>
+        <Class IRI="#Мыши"/>
+    </ObjectPropertyRange>
 </Ontology>
 
 
